@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+<ul>
+  <li><a href="">home</a></li>
+</ul>
+
+
+  <script>
+
+    var greetings;
+    greetings ="안녕하세요!"; //""도 사용된다.(o)
+    greetings ='하이!';//''를 주로 사용한다.
+    greetings = `반갑습니다!`;//``도 사용이 가능하긴 하다.
+
+    var exStr="그는 나에게 \"위험해!\"라고 말했다.";
+    var exStr='그는 나에게 "위험해!"라고 말했다.';
+
+
+    /*
+    탈출문자(excape sequence)
+    문자열 내에서 특정 명령 혹은 원하는 값을 처리하기 위해
+    사용하는 기호
+    \n:줄 개행
+    \t: 탭(들여쓰기 공백4개)
+    \":들여쓰기 "표기
+    \':들여쓰기 '표기
+    */
+    var tag='<ul>\n\t<li>\n\t\t<a href="">home</a>\n\t</li>\n</ul>';
+
+    //템플릿 리터럴:백틱(``)으로 감싼 문자열
+    //공백과 들여쓰기,줄 개행 등을 모두 문자열로 인정해 준다.
+    tag=`
+<ul>
+  <li><a href="">home</a></li>
+</ul>`;
+    console.log(tag);
+console.log('---------------------------');
+
+var month =12;
+var day = 25;
+var anni ='크리스마스';
+
+//12월 25일은 크리스마스 입니다.
+
+
+//문자열과 문자열 간에는 덧셈 연산이 가능
+//문자열 +문자열 >문자열을 단순히 연결해서 결합한 결과가 산출
+//문자열과 다른 데이터 타입간의 덧셈 연산은 전체 결과를 문자열 취급.
+
+console.log(month+'월'+day+'일은'+anni+'입니다.');
+//템플릿 리터럴을 이용한 포맷팅 출력 방식
+console.log(`${month}월${day}일은${anni}입니다.`);
+
+  </script>
+</body>
+
+</html>
