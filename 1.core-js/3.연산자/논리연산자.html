@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    /*
+논리 연산자:양쪽 항의 논리값을 연산하여 새로운 논리값을 도출
+&&:양쪽 항이 모두 참일 경우 참
+||:둘 중 하나만 참이어도 참
+*/
+
+
+    var id = 'abc123';
+    var pw = '123';
+
+    // if (id === 'abc123') {
+    //   if (pw === '123') {
+    //     alert('로그인 성공');
+    //   }
+    //   else{
+    //     alert('로그인 실패');
+    //   }
+
+    // } else {
+    //   alert('아이디가 일치하지 않습니다.');
+    // }
+
+    if (id === 'abc123' && pw === '123') {
+      alert('로그인 성공')
+    } else {
+      alert('로그인 실패');
+    }
+
+    //논리 반전(not)
+    //true >false , false>true
+    console.log(`---------------------`);
+    var money = 0;
+
+    // if (money === 0) {
+
+    //   alert('빈둥거리자')
+    // }
+    // else{
+    //   alert('나가즈아')
+    // }
+
+    // 0 = false 이다.
+
+    if (!money) {
+      alert('집에서 쉼');
+    } else {
+      alert('나가 놀자');
+    }
+
+
+
+
+    console.log('-----------------------------------');
+
+    //삼항 조건 연산자
+    // 조건식 ? '좌항':'우항'
+    // 조건식의 결과가 true라면 좌항 , false라면 우항의 값이 도출
+
+
+    var score = 50;
+    
+    var result = score >= 70 ? '합격' : '불합격';   //삼항연산자
+
+    console.log('시험결과:'+result);
+
+
+  </script>
+
+</body>
+
+</html>
