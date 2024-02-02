@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    //math.random() > 0.0이상 ~1.0미만의 랜덤 실수 발생.
+
+    console.log('랜덤값 : ' + Math.random());
+
+    //1~10사이의 랜덤 정수를 생성.
+
+
+    /*
+    Math.random() > 0.0~1.0
+    (Math.random() *10)  >  0.0~10.0
+    Math.Floor(Math.random() *10)+1  >  1~11
+
+
+    10~100
+    Math.Floor(math.random()*100) > 0~100
+    Math.Floor(math.random()*100)+10 > 10~110
+    Math.Floor(math.random()*91)+10 > 10~101
+=====================================================================
+
+36~147
+
+math.floor(math.random()*112)+36    > 36~148
+
+
+math.floor(math.random()*20000)+1    > 36~147
+
+
+//135 ~211 범위의 정수 난수 
+
+    math.floor(math.random()*77)+135   
+
+ */
+
+
+ console.log(Math.floor(Math.random() * 77 + 135));
+
+ 
+ console.log(Math.floor(Math.random() * 20000+ 1));
+
+
+
+  </script>
+</body>
+
+</html>
