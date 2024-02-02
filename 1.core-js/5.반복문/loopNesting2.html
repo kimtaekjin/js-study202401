@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    /*
+-정수를 하나 입력 받아서, 입력받은 수 까지의 모든 소수를
+출력하고 그 소수들의 개수를 구하는 로직을 작성하라.
+*/
+
+    var num = +prompt('정수를 입력하시오');
+    var count = 0; // 소수의 개수를 기억해 줄 변수
+
+    for (var i = 1; i <= num; i++) {
+      var cnt = 0; // 소수의 판별을 위해 약수의 개수를 세 줄 변수.
+      for (var j = 1; j <= i; j++) {
+        if (i % j === 0) {
+          cnt++;
+        }
+      }
+      if (cnt === 2) {
+        console.log(i);
+        count++;
+      }
+    }
+
+    console.log(`소수의 개수: ${count}개`);
+  </script>
+
+
+</body>
+
+</html>

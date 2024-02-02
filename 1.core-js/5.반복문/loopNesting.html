@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    for (var lever = 2; lever <= 9; lever++) {
+
+      console.log(`***구구단${lever}단***`);
+      console.log(`==========================`);
+      for (var dan = 2; dan <= 9; dan++) {
+        console.log(`${lever}x${dan}=${lever*dan}`);
+
+      }
+      console.log('----------------------------');
+    }
+    /*
+             # 반복문 중첩 (loop nesting)
+             
+             - 외부 반복문 내부에 내부 반복문이 존재하는 형태를
+             반복문 중첩이라고 합니다.
+             반복문 자체를 반복시켜야 할 경우에 중첩을 사용합니다.
+             
+             - 내부 반복문이 종료가 되어도, 외부 반복문이 끝나지 않는다면
+              내부 반복문은 외부 반복문의 제어변수의 크기 및 범위까지
+              계속해서 반복 실행되게 됩니다.
+
+              for뿐만 아니라 while문도 중첩이 가능하다.
+             */
+  </script>
+</body>
+
+</html>

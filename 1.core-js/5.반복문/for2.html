@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <script>
+
+
+/*
+
+-정수 1개를 입력받아서 해당 정수가 소수(prime number)인지를
+ 판별하라
+
+*/
+var num = +prompt('정수를 입력하세요');
+var cnt = 0; //나누어 떨어진 횟수를 체크
+
+for(var i=1; i <=num; i++){
+  if(num %i ===0){
+cnt++;
+
+  }
+}
+
+
+
+
+if(cnt ===2){
+  console.log(`${cnt}는 소수입니다.`);
+}
+
+
+
+
+console.log('-----------------');
+
+for(varj=2; num%j !==0; j++){
+
+console.log(`${num}=${num===j ? '소수 : 소수 x }'`);
+
+} 
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    //while: 반복 횟수가 명확하지 않은 경우 많이 사용
+    // for: 반복 횟수가 명확한경 많이사용
+    var total = 0;;
+    for (var i = 1; i <= 10; i++) {
+      totla += 1;
+    }
+
+    //1~200까지의 정수 중 6의 배수이면서 12의배수가 아닌 갯구출력
+
+
+    var cnt = 0;
+
+    for (var n = 1; n <= 200; n++) {
+
+      if (n % 6 === 0 && n % 12 !== 0) {
+
+        cnt++;
+
+      }
+      console.log(cnt);
+
+    }
+
+
+
+
+      //점수를 하나 입력받아서\
+      //입력받은 정수까지의 팩토리얼 값을 구하라
+      //팩토리얼)5! >5 x 4 x 3 x 2 x 1
+
+
+      var num = +prompt('정수를 입력하세요');
+      var fac =1; //팩토리얼 최종 값을 담을 변수
+
+      for(var i=1; i<=num; i++){
+        fac *=i;
+      }
+
+      console.log(fac  );
+
+
+
+      for(var i=num; i>=1; i--){
+        
+      }
+
+
+  </script>
+
+
+
+</body>
+
+</html>
