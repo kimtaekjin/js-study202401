@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+  <script>
+
+    var ex = 10 + '20';
+    console.log('ex: '+ex)//1020 문자열
+
+    var ex2 = 10*'3';
+    console.log('ex2: '+ex2);//30 숫자
+
+    ex2 = 100+'';
+    console.log(typeof ex2);//문자열
+
+    //문자열 타입의 암묵적 숫자 변환
+
+    var ex3= +'550';
+
+
+    ex3= +'false'; // number>NaN
+
+
+    //논리 타입을 암묵적 숫자 변환
+
+
+    ex3 = +true; //1
+    ex3 = +false; //0
+
+    ex3= +null;
+    ex3 = +NaN;
+
+
+
+
+
+    console.log(ex3);
+    console.log(typeof ex3);
+
+
+    console.log('--------------------');
+
+    //Truthy,Falsy
+    //undefined , null ,0 ,NaN ''(빈 문자열)은 모두 false
+    //나머지는 모두 true로 인식합니다.
+
+    //함수가 반환하는 값,비동기 통신의 결과값들이 정확하게 어떤 값인지
+    //모르더라도 해당 값이 띠고 있는 논리적 평가에 따라 조건문을 수월하게
+    //구성할 수 있다.
+
+    if('') console.log('OK1'); //false
+        if('hello') console.log('OK2');
+        if(undefined) console.log('OK3');//false 
+        if(null) console.log('OK4'); //flase
+        if(350) console.log('OK5');
+        if(NaN) console.log('OK6'); //faalse
+        if(0) console.log('OK7'); //flase
+
+        if([1,2,3]) console.log('OK8');
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
