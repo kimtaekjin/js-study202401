@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    //매개변수 (parameter)
+    //함수를 정의할 때 함수 바깥쪽에서 함수 내부로 들어오는 데이터를 저장하는 변수.
+    
+    //begin부터 end까지의 총합을 구해주는 함수
+    function calcRangeTotal(begin , end){
+      var total=0;
+      for(var i=begin; i<=end; i++){
+        total+=i;
+      }
+      return total;
+    }
+
+    //매개변수가 없는 경우
+    function selectrandomfood(){
+      var rn=Math.random();
+      return rn>0.5 ? '짜장면' : '짬뽕'; //삼항연산자
+    }
+    console.log('오늘 저녁 추천해줘봐!'+selectrandomfood());
+
+
+    //매개변수의 default값 지정(ES6)
+    function sayhello(lang = '한국어'){
+      console.log('lang: '+lang);
+      if(lang ==='한국어'){
+        alert('안녕하세요');
+      }
+      else if(lang ==='영어'){
+        alert('hello')
+      }
+      else if(lang ==='일본어'){
+        alert('곤니찌와');
+      }
+    }
+
+    sayhello('영어');
+
+
+
+
+
+    //자바스크립트 함수는 매개변수의 개수를 다르게 주더라도
+    //정상적으로 작동한다 하지만, 좋은 코드가 아니므로 권장x
+    var totalNumber = calcRangeTotal(10,30);
+    console.log(`실행 결과값: ${totalNumber}`);
+
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

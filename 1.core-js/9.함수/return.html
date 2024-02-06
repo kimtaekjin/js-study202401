@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+function add(n1,n2){
+  return n1+n2;
+}
+console.log(add(3,7));
+console.log(add(9,4));
+console.log(add(add(5,5), add(8,6))); //add(10,14)
+//리턴값이 있는 함수 호출문은 다른 함수의 매개값으로도 사용이 가능하다.
+//함수 중첩 호출은 안쪽부터 실행, 같은 라인이면 왼쪽부터 호출.
+//void 함수: 리턴값이 없는 함수.
+//void 함수는 단독 호출해서 사용. 다른 함수의 인자(매개값)으로
+//전달이 불가능하다.
+
+function g(nick){
+  var bednick =['멍청이','바보'];
+  if(bednick.includes(nick)){
+    console.log('사용할수 없는 닉네임입니다.');
+    //return 키워드는 함수의 호출부로 값을 반환하는 역할도 하지만,
+    //함수를 강제로 종료하는 역할도 하고 있습니다.
+    return;
+    //return으로 인해 이후 영역은 실행이 안되고 강제 종료된다.
+  }
+  console.log(nick+'님 안녕하세요');
+}
+
+g('멍청이');
+
+
+// var result =g('멍멍이');
+// console.log(result); //void는 반환값이 없음.(undefined)
+
+
+
+
+
+// //다중 리턴
+// // function operateALL(n1,n2){
+// //   return n1+n2;
+// //   return n1-n2;
+// //   return n1*n2;
+// //   return n1/n2;
+// //   return n1%n2;
+// // }   사용할 수 없는 리턴계산식이다.
+// var results =operateALL(10,2);
+// console.log(results);
+
+
+//return 키워드를 여러 개 쓸 수 없습니다.
+//배열 or 객체를 이용하여 값을 한번에 리턴할 수 있습니다.
+return {
+  plus: n1 + n2,
+  minus: n1 - n2,
+  multy: n1 * n2,
+  divide: n1 / n2,
+  mod: n1 % n2
+};
+
+
+
+
+
+  </script>
+</body>
+
+</html>
