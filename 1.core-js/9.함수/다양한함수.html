@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+  <script>
+
+
+
+var g  = 'hello';
+    //즉시 싱행 함수(정의와 동시에 실행되는 함수) 
+    (function (x, y) {
+      console.log(`x + y = ${x + y}`);
+    })(10, 20);
+
+    function cnt(n) {
+      if (n < 0) return;
+      cnt(n - 1);
+      alert(n);
+    }
+
+    cnt(5);
+
+
+
+
+    // n*(n-1)
+    console.log('---------------------');
+
+    function factorial(n) {
+      if (n === 1) return;
+      return n * factorial(n - 1);
+    }
+    console.log('6factorl: ${factorial(6)}');
+
+
+    //중첩 함수:함수 안에 또 다른 함수를 정희한 형태
+    //inner는 outer가 호출되어있어야만 사용이 가능하다.
+
+    console.log('-----------------------------------');
+
+
+    //헬퍼 함수
+    function outer() {
+      var x = 2; // outer 함수 내에서만 사용 가능한 지역 변수
+
+      function inner() {
+        // var y = 2;   //inner 함수 내에서만 사용 가능한 지역변수
+        console.log(`x+y = ${x+y}`);
+      }
+      inner(); //outer 함수 내에서만 사용이 가능합니다.\\\
+      
+    }
+
+    //inner() > outer 함수 내에 선언된 함수 > outer를 호출하지 않으면 존재x
+
+outer();
+
+    // console.log(y); inner 내에서만 유효함
+    // console.log(x);
+    
+
+    //지역변수와 전역변수
+    
+
+console.log(g);
+
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>
