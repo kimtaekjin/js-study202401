@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+
+
+/*
+  Q. n개의 정수를 전달하면 해당 정수들의 총합과 평균을 
+     반환하는 함수 calcNumbersTotalAndAverage를 작성하세요.
+*/
+
+function calcNumbersTotalAndAverage(...number){///...number  멀티변수 [여러개의 값을 배열로 묶음]
+
+var total=0;
+var avg=0;
+  for(var n of number){
+    total +=n;
+
+  }
+avg = total/number.length;
+return {total,average:avg}; //다중값을 리턴하려면 객체나 배열을 넣어야한다.
+} //프로퍼티의 키를 생략하면 변수명이 키가 됩니다.
+var result = calcNumbersTotalAndAverage(10,20,30,60,30);
+console.log(`총합: ${result.total}, 평균: ${result.average}`);
+
+  </script>
+</body>
+
+</html>

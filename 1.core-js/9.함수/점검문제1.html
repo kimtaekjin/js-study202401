@@ -24,21 +24,39 @@ Q. n의 약수의 개수를 구하기
 */
 
 
-function calcDivisor(n){
-var count=0;
+// function calcDivisor(n){
+// var count=0;
 
+//   for(var i=1; i<=n; i++){
+//     if(n % i ===0){
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log('n의 약수의 개수는: '+calcDivisor(100));
+
+
+
+function calcDivisor2(n){
+  var divisors  = [];
+  var cnt = 0;
   for(var i=1; i<=n; i++){
-    if(n % i ===0){
-      count++;
+    if(n%i ===0){
+      divisors.push(i); //push: 요소 추가
+      cnt++;
     }
   }
-  return count;
+
+  console.log(`${n}의 약수: ${divisors}`);
+  return divisors.length; //count 변수로 숫자를 직접 세도 되지만, 약수 배열이 있으므로
+  //요소의 개수가 곧 약수의 개수이다.
 }
 
-console.log('n의 약수의 개수는: '+calcDivisor(100));
 
-
-
+var divcount = calcDivisor2(10);
+console.log(`약수의 개수:${divcount}개`);
   </script>
 </body>
 </html>
