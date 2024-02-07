@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+const userList = [
+  {
+    account: "abc1234",
+    userName: "대길이",
+    job: "추노",
+    address: "서울",
+    hobbies : ["수영", "축구", "테니스"],
+  },
+  {
+    account: "banana",
+    userName: "빠나나",
+    job: "과일",
+    address: "서울",
+    hobbies : ["푸드파이팅", "테니스"],
+  },
+  {
+    account: "park1234",
+    userName: "주차왕",
+    job: "발렛파킹",
+    address: "경기",
+    hobbies : ["족구", "축구", "테니스", "영화감상"],
+  },
+  {
+    account: "fire",
+    userName: "불꽃남자카리스마",
+    job: "게이머",
+    address: "서울",
+    hobbies : ["독서", "테니스"],
+  },
+];
+
+//4명의 회원중 취미가 딱 2개의 사람만 필터링 해 주세요.
+//취미가 2개인 사람만 모아서 새 배열에 다시 담아줘.
+
+function filterby2hobbys(){
+  const filterbyArray= [];
+  for( let user of userList){
+    if(user.hobbies.length ===2){
+      filterbyArray.push(user);
+    }
+  }
+  return filterbyArray;
+}
+//서울 사는 사람들만 필터링해서 새로운 배열에 담아줘
+
+function filterUserLivedInseoul(){
+  const filterbyArray=[];
+  for(let user of userList){
+    if(user.address ==='서울'){
+      filterbyArray.push;
+    }
+  }
+  return filterbyArray;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+  //콜백을 이용한 필터링 함수
+  function filter(func){
+    const filterbyArray=[];
+  for(let user of userList){
+    if(func(user)){
+      filterbyArray.push(user);
+    }
+  }
+  return filterbyArray;
+  }
+
+  //취미가 3개 이상인 사람만 필터링
+
+  const result =filter(user =>user.hobbies.length >=3);
+
+  //주소가 서울이면서 직업이 게이머인 사람만 필터링
+  const result2 = filter(user =>user.address ==='서울' &&user.job ==='게이머');
+
+  console.log(result,result2);
+
+  //회원 정보 중에 회원 이름만 전부 모아서 배열에 담아줘
+
+console.log('------------------------------------------');
+
+
+
+
+  </script>
+</body>
+
+</html>
