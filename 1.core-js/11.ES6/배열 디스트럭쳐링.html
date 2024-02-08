@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+
+const userName = ['김철수','홍길동','박영희'];
+// const kim=userName[0];
+// const honh=userName[1];
+// const pack=userName[2];
+
+
+const [kim, hong, park] = userName ;
+
+const[,,kk]=userName;
+console.log(`${kk}`);
+
+console.log(kim);
+console.log(hong);
+console.log(park);
+
+
+
+
+
+//변수값 교환하기
+let first=10;
+let second=20;
+
+
+[second,first]=[first,second];
+
+console.log(`1st: ${first} 2st: ${second}`);
+
+
+//[1,3,5,7,9,11]
+//맨 앞 2개는 각각의 변수에 저장하고
+//나머지는 묶어서 새로운 배열로 받고 싶다.
+const[one,three,...rest]=[1,3,5,7,9,11];
+//,,,rest 에서 ... =>는 스프레드 문법으로 리스트를 받아올 수 있다.
+console.log(`one:${one},two:${three},나머지:${rest}`);
+
+
+//스프레드를 활요한 배열의 간편 복사
+console.log(['==============================']);
+const foods=['감튀','햄버거','콜라'];
+
+
+// const copyfoods=foods; /배열의 주소값(포인터)를 복사
+
+//배열 복사 방법
+//const copyfoods = foods.map(f=>f);
+//const copyfoods = foods.slice();
+const copyfoods= ['치킨너겟',...foods,'닭강정'];//스프레드 복사
+
+console.log(copyfoods);
+console.log(foods);
+
+  </script>
+
+</body>
+
+</html>

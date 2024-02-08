@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    const emp={
+      empname:'뽀로로',
+      age:4,
+      hiredate:'2021',
+      birthday:'12-31'
+    };
+//배열은 순서가 있지만 객체는 순서가 없다.
+//객체는 인덱스가 없기에 키를 그대로 써서 순서를 적용한다.
+
+    const{empname,birthday,age}=emp;
+
+    console.log(`이름은${empname}생일은${birthday}이고 나이는${age}살`);
+
+   
+    const{empname:en,birthday:bd,age:a}=emp;
+
+    console.log(`이름은${en}생일은${bd}이고 나이는${a}살`);
+
+
+console.log('---------------------------------------');
+const {birthday:bf,...oters}=emp;
+console.log(oters);
+
+//객체복사
+console.log('-------------------------');
+const copyEmp = {
+  ...emp,addressL:'마포구',hobbies:['산책','수영']
+}
+
+console.log(copyEmp);
+console.log(emp);
+
+
+
+  </script>
+</body>
+
+</html>
