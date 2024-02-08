@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <ul class="fruits">
+    <li class="fr apple">사과</li>
+    <li class="fr banana">바나나</li>
+    <li class="fr grape">포도</li>
+    <li class="fr peach">복숭아</li>
+  </ul>
+
+
+
+
+
+  <script>
+
+//querySelector는 발견된 첫번째 태그만 겨자온다.
+// const $grape = document.querySelector('.grape');
+const $grape = document.querySelector('.banana+li');
+$grape.textContent='맛있는포도'
+console.log($grape);
+
+const $fr = document.querySelector('.fr');
+console.log($fr);
+
+const $frall = document.querySelectorAll('.fr');
+
+console.log($frall);
+
+
+//quertSelectorAll이 가져오는 데이터 묶음은
+//배열이 아닌 유사배열이므로, 배열문법을 사용하기 힘들다.
+//그래서 유사배열을 실제 배열로 바꿔서 쓰는것잊 좋다.
+
+// $frAll.push('메롱')(x)
+
+//유사배열을 순수한 배열로 변경하기
+const $frall2 = document.querySelectorAll('.fr');
+const $fruitsArray = [...$frall];
+$fruitsArray.pop().textContent = '오렌지';
+
+
+
+//요소를 한 번에 여러 개 취득하는 기타 메서드들도
+//유사배열형태로 요소가 리턴된다.
+
+const $frAllByclassName = document.getElementsByClassName('fr');
+console.log($frAllByclassName);
+const $frAllByTagName= document.getElementsByTagName('li');
+
+console.log($frAllByTagName);
+console.log($frAllByclassName);
+
+
+for($f of $fruitsArray){
+  $f.style.border ='1px dashed tomato';
+  $f.style.margin = '10px';
+}
+//$f.style.marginLeft='10px';<<<css는 카멜케이스로 적용한다
+//-(하이푼)을 사용하지 않는다.
+
+  </script>
+
+
+
+
+</body>
+
+</html>

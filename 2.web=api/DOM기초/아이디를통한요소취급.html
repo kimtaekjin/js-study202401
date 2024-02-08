@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+<ul>
+  <li id="apple" style="background: red;">사과</li>
+  <li id="banana">바나나</li>
+  <li id="grape">포도</li>
+  <li id="peach">복숭아</li>
+</ul>
+
+
+
+<script>
+
+//관례적으로 노트 변수는 이름앞에 $기호를 붙입니다.
+const $banana = document.getElementById('banana');
+console.log($banana);
+
+$banana.textContent = "포테이너";
+$banana.attributes.id.value = 'bnn';
+const $apple =document.getElementById('apple');
+$apple.style.background = 'orange';
+
+
+
+</script>
+
+</body>
+
+</html>
