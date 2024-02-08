@@ -71,7 +71,7 @@ function filterUserLivedInseoul(){
   //콜백을 이용한 필터링 함수
   function filter(func){
     const filterbyArray=[];
-  for(let user of userList){
+  for(let user of userList ){
     if(func(user)){
       filterbyArray.push(user);
     }
@@ -92,8 +92,16 @@ function filterUserLivedInseoul(){
 
 console.log('------------------------------------------');
 
-
-
+function map(callback){
+  //특정 프로페티를 담을 배열
+  const mappedArray =[];
+  for(let user of userList){
+    mappedArray.push(callback(user));
+  }
+  return mappedArray;
+}
+const nameList = map(user =>user.nameList);
+console.log(nameList);
 
   </script>
 </body>

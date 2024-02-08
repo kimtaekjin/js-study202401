@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+
+const userList = [
+  {
+    account: "abc1234",
+    userName: "대길이",
+    job: "추노",
+    address: "서울",
+    hobbies : ["수영", "축구", "테니스"],
+  },
+  {
+    account: "banana",
+    userName: "빠나나",
+    job: "과일",
+    address: "서울",
+    hobbies : ["푸드파이팅", "테니스"],
+  },
+  {
+    account: "park1234",
+    userName: "주차왕",
+    job: "발렛파킹",
+    address: "경기",
+    hobbies : ["족구", "축구", "테니스", "영화감상"],
+  },
+  {
+    account: "fire",
+    userName: "불꽃남자카리스마",
+    job: "게이머",
+    address: "서울",
+    hobbies : ["독서", "테니스"],
+  },
+];
+
+
+//배열 고차함수 
+//forEach(): 배열의 요소를 반복하면서 하나씩 소비
+userList.forEach(user=> console.log(`제 이름은 ${user.name}이고 ${user.address}에 삼다`));
+
+
+const foodList = ['자장','탕수','짬뽕'];
+foodList.forEach(food =>console.log(`${food}존맛`));
+
+
+
+
+console.log('---------------------------------');
+
+//filter
+//특정 조건에 의해 필터링 된 새로운 배열이 리턴
+const numbers = [1,2,3,4,5,6,7,8,9,10];
+
+
+// const newArray=numbers.folter(num => num%3 ===0);
+// console.log(newArray);
+
+
+//회원 중 아이디가 ABC1234인 사람을 필터링
+const newuserlist= userList .filter(user =>user.account ==='ABC1234');
+console.log(newuserlist);
+
+
+ //배열 고차함수:map
+ //특정 배열에서 특정 조건에 맞는 값들만 따로 모아서
+ //새롭게 매핑한 배열을 반환.
+
+ console.log('-------------------------------');
+ const square =numbers.map(n=>n**2);
+ console.log(square);
+
+const puls2 = numbers.map(n=>n+2);
+console.log(puls2);
+
+//회원들의 취미 중 첫번째 취미만 새 배열로 받기
+const firstHobby = userList.map(user =>user.hobbies[0]);
+console.log(firstHobby);
+
+//회원 목록에서 회원의 이름과 주소만 추출하고 싶다.
+const mappeduserlist =userList.map(u =>{
+  return {
+    userName :u.userName,
+    addr:u.address
+  }
+});
+console.log(mappeduserlist);
+
+// filter -> 10개짜리 배열에서 조건에맞는 몇개만 필터링
+// 필터의 결과 배열은 개수가 10개 이하일 가능성이 크다.
+
+// map -> 10개짜리 배열에서 조건대로 10개를 전부 매핑
+// 맵의 결과 배열 개수는 무조건 10개다.
+
+console.log('-----------------------------');
+
+const appleBasket = [{
+    color: 'green',
+    sweet: 13
+  },
+  {
+    color: 'red',
+    sweet: 14
+  },
+  {
+    color: 'red',
+    sweet: 11
+  },
+  {
+    color: 'green',
+    sweet: 6
+  },
+  {
+    color: 'green',
+    sweet: 7
+  },
+  {
+    color: 'green',
+    sweet: 9
+  },
+];
+
+//사과중에 녹색이면서 당도가 9이상인 사과만 선별
+//이 사과는 xxx색이고 당도는 xxx입니다 라는 문자열이 매핑되어있는 배열 리턴
+
+
+// const applecolor = appleBasket.filter(apple =>apple.color ==='green' &&apple.sweet >=9);
+// console.log(applecolor);
+
+// const mapapple=applecolor.map
+// (apple=>`이 사과는 ${apple.color}식이며 당도는 ${apple.sweet}입니다.`)
+
+// console.log(mapapple);
+
+//메서드체인닝
+appleBasket
+.filter(apple =>apple.color ==='green' &&apple.sweet >=9)
+.map(apple=>`이 사과는 ${apple.color}색이며 당도는 ${apple.sweet}입니다.`)
+.forEach(a=>console.log(a));
+
+
+
+// 회원목록에서 서울에 사는 회원들의
+// 두번째 취미만 배열에 모아서
+// xxx회원님의 2번째 취미는 xxx입니다. 를 반복해서 출력
+
+console.log('-------------------------------------------');
+
+// userList.filter(user=>user.address==='서울')
+// .map(user =>`${user.account}회원님의 2번째 취미는${user.hobbies[1]}입니다.`)
+// .forEach(user=>console.log(user));
+
+userList.filter(user=>user.address==='서울')
+.map(user =>{
+  return{
+    name:user.address,
+    secondHobby:user.hobbies[1]
+  }
+})
+.forEach(u=>console.log(`${u.name}회원님의 2번째 취미는 ${u.secondHobby}입니다.`));
+
+  </script>
+</body>
+
+</html>
