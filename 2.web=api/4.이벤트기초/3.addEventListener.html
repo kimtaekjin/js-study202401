@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+<button id="btn">클릭</button>
+
+
+  <script>
+
+    const $btn = document.getElementById('btn');
+
+
+    //addEventListener('이벤트 타입',핸들러 ->콜백)
+    $btn.addEventListener('click',function(){
+      alert('안녕');
+    });
+
+    $btn.addEventListener('click',()=>{
+      alert('멍멍 반갑다멍');
+    });
+
+    $btn.addEventListener('click',helloHandler);
+
+    //핸들러 제거: 이름이 있는 핸들러만 제거 가능.
+    $btn.removeEventListener('click',helloHandler);
+
+  </script>
+
+</body>
+
+</html>

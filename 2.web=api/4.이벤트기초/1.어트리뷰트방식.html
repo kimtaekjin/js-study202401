@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <button type="button" id="btn1" onclick="greetings()">클릭하세요</button>
+  <button type="button" id="btn2" onmouseover="mouseOverHandler()">마우스를 올리세요</button>
+  <button type="button" id="btn3" onmouseout="mouseOutHandler()">마우스를 치우세요</button>
+
+
+
+  <script>
+
+//이벤트 핸들러(브라우저에게 이벤트 발생 시 실행시킬 함수) 정의
+function greetings(){
+  alert('안녕하세요');
+}
+
+function mouseOverHandler(){
+alert('마우스를 올렸습니다.');
+}
+
+function mouseOutHandler(){
+  alert('마우스를 치우셨습니다.');
+}
+
+
+  </script>
+
+</body>
+
+</html>
