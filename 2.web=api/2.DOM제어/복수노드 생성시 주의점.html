@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+<ul id="fruits">
+
+</ul>
+
+<script>
+
+//Live DOM: 사전에 미리 렌더링 되어 있는 요소 노드.
+const $fruis = document.getElementById('fruits');
+
+
+//과일 이름 텍스트 배열
+const fruitsName = ['Apple','Banana','Grape','Orange'];
+
+/*
+# 아래 방법의 문제점
+-이미 활성화된 Live DOM에다가 반복해서 가상DOM을
+추가하는 행위는 메모리상 높은 코스트가 발생함.
+-활성화된 DOM을 변경조작하는 것은 가능한 한
+횟수를 줄여줘야 합니다.
+
+
+for(let f of fruitsName){
+  const $li =document.createElement('li');  =가상의 DOM
+  $li.textContent = f;
+  $fruis.appendChild($li);
+}
+*/
+
+//가상의 부모DOM을 생성
+//다른 노드를 담는 임시 컨테이너 역할을 하는 가상 DOM 객체
+const $frag = document.createDocumentFragment();
+
+for(let f of fruitsName){
+  const $li = document.createElement('li');
+  $li.textContent=f;
+  $frag.appendChild($li);
+}
+
+$fruis.appendChild($frag);
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
