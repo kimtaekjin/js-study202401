@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <ul id="users">
+    <li id="1" data-user-id="kim1234" data-role="common">Kim</li>
+    <li id="2" data-user-id="park4321" data-role="admin">Park</li>
+  </ul>
+
+  <script>
+    const $users = document.getElementById('users');
+
+    // 디스트럭처링 할당을 사용하여 각 li 요소를 변수에 할당합니다.
+    const [$user1, $user2] = [...$users.children];
+
+    console.log($user1.getAttribute('data-role'));
+    console.log($user1.dataset);
+    console.log($user1.dataset.role);
+    console.log($user1.dataset.userId);
+    //자바스크립트는 케밥케이스로 되어있는
+    //data-속성을 카멜케이스로 변환해서 가지고 있는다.
+
+
+    $user2.dataset.role = 'anonymous';
+    $user2.dataset.userTelNumber = '010-1234-1234';
+
+
+  </script>
+
+</body>
+
+</html>
