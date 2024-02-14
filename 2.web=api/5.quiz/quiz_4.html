@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+
+    img{
+      width: 500px;
+      height: 500px;
+      border: 8px solid #000;
+      display: block;
+      
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+
+
+  <h2>css 스타일 변경하기</h2>
+  <img src="./img/1.jpg" alt="test" class="img">
+  <select id="select">
+      <option value="./img/1.jpg">봄</option>
+      <option value="./img/2.jpg">여름</option>
+      <option value="./img/3.jpg">가을</option>
+      <option value="./img/4.jpg">겨울</option>
+  </select>
+  <span>변경할 색상</span>
+  <input type="color" class="input">
+
+
+
+
+<script>
+
+
+        /*
+        사용자가 선택한 계절에 따른 사진을 보여주세요.
+        select 태그에 이벤트를 등록할 때의 타입 ->change
+        변경된 option의 값을 얻으려면 ->select 태그의 value를 얻어내면 됨.
+        (select.value)
+        
+        
+        사용자가 선택한 색상에 따른 테두리 색깔을 바꿔 주세요. (border-color)
+        input 태그의 value를 확인하신 후 img 태그의 bordercolor를 변경.
+        */
+
+      const $select = document.getElementById('select');
+      const $img = document.querySelector('.img');
+      const $input =document.querySelector('.input');
+      
+
+      $select.addEventListener('change',()=>{
+        $img.setAttribute('src',$select.value); //secAttribute ->속성 세팅
+      });
+
+
+
+      $input.addEventListener('change',e=>{
+        // console.log(e.target.value);
+        $img.style.borderColor=e.target.value;
+
+
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // const $select = document.getElementById('select');
+        // const $img =document.querySelector('.img');
+        // const $input =document.querySelector('.input');
+
+
+        // $select.addEventListener('change',()=>{
+        //   const $season =$select.value;
+        //   $img.src= `${$season}`;
+        // })
+
+        // $input.addEventListener('input',(e)=>{
+        //     e.value=input.value;
+        //     $img.style.borderColor = color;
+        // })
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
