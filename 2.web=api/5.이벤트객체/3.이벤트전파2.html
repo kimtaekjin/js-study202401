@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    #fruits {
+      list-style: none;
+      padding: 0;
+      border: 2px solid red;
+    }
+
+    #fruits li {
+      width: 60px;
+      cursor: pointer;
+      margin-bottom: 10px;
+
+    }
+
+    #fruits .active {
+      color: red;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <ul id="fruits">
+    <li id="apple" class="active">Apple</li>
+    <li id="banana">Banana</li>
+    <li id="grape">Grape</li>
+  </ul>
+
+
+  <div>선택된 과일: <em class="msg">apple</em></div>
+
+  <br>
+  #새로운 과일 추가
+  <input type="text" class="text-box">
+  <button id="add">추가</button>
+
+  <script>
+    const $fruits = document.getElementById('fruits');
+    const $msg = document.querySelector('.msg');
+    const $liList = [...$fruits.children]; //모든 li 요소를 배열에 담기
+
+    /*
+
+    1.선택된 과일 이름을 em.msg에 작성해야 한다.
+    2. 선택된 과일 li에 클래스 active를 추가해야 한다.
+        동시에 기존에 있던 li의 active를 지워야 한다.
+    */
+
+
+
+    //이벤트 핸들러 =>ul에 클릭이 발생하면 호출
+    function activate(e) {
+
+      //이벤트 발생 타겟이 특정 요소인지를 검증. (matches)
+      if (!e.target.matches('#fruits > li')) {
+        console.log('이벤트 발생 지역이 아닙니다');
+        return;
+      }
+      console.log('이벤트 발생');
+
+      //active 클래스를 클릭된 요소에 추가하고
+      //기존에 active를 가지고 있던 요소에 클래스를 삭제
+      for (let $li of $liList) {
+        /*
+        toggle 메서드의 두번째 매개값으로 논리값을 전달할 수 있는데,
+        해당 논리값이 true로 판명나면
+        지정한 클래스를 추가하고, 
+        false로 판명나면 지정한 클래스를 삭제합니다.
+        */
+        $li.classList.toggle('active', $li === e.target);
+      }
+      //em.msg에 이벤트가 발생된 과일 이름을 추가
+      $msg.textContent = e.target.id;
+    };
+    //ul에 이벤트 등록
+    $fruits.addEventListener('click', activate);
+
+
+    //동적으로 과일 추가하기
+    const $btn= document.getElementById('add');
+    const $textBox=document.querySelector('.text-box');
+
+    //추가 버튼에 이벤트 등록
+    $btn.addEventListener('click',e =>{
+      const $newLi = document.createElement('li');//<li></li>
+      $newLi.textContent = $textBox.value;
+
+      //setAttribute를 사용해서 id를 넣어준다.
+      $newLi.setAttribute('id',$textBox.value.toLowerCase()); //toLowerCase =소문자 변경
+      $fruits.appendChild($newLi);
+      $textBox.value=''; //다음 입력을 위해 입력창 비우기
+
+      //새롭게 추가된 li에도 active 추가 대상 여부를 확인하기 위해 
+      //배열에 추가.
+
+      $liList.push($newLi);
+
+      //입력창 안에서 엔터키를 입력하면 버튼 클릭 효과와 동일한 효과를 내기.
+      $textBox.addEventListener('keydown', e=>{
+        if(e.keyCode === 13){
+          //click()은 요소를 직접 클릭한 것과 같은 효과를 줌.
+          //클릭 이벤트가 발생할 수 있도록 유도.
+          $btn.click();
+        }
+      });
+
+    });
+
+
+  </script>
+
+
+</body>
+
+</html>
