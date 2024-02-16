@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<style>
+
+.title{
+  font-size: 50px;
+  border-bottom: 3px solid red;
+  cursor: pointer;
+}
+
+.menu ul{
+  border: 2px solid black;
+  display: none;
+}
+.menu ul li{
+  font-size: 30px;
+  padding: 15px;
+}
+.open ul{
+      display: block;
+    }
+    .needs h3{
+      font-size: 40px;
+    }
+    .need-food{
+      font-size: 20px;
+    }
+    .need-btn{
+      font-size: 15px;
+    }
+    .food li{
+      font-size: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid black;
+      width: 100px;
+    }
+
+</style>
+
+
+
+</head>
+<body>
+  
+
+
+  <div id="lunches" class="menu">
+    <span class="title">추천 점심 메뉴 (click me!)</span>
+    <ul>
+      <li>짜장면</li>
+      <li>돈가스</li>
+      <li>김치찌개</li>
+      <li>제육덮밥</li>
+    </ul>
+  </div>
+
+  <div class="needs">
+    <h3>먹고싶은 음식 작성</h3>
+    <input type="text" class="need-food" placeholder="먹고싶은 음식을 쓰시오">
+    <button class="need-btn">확인</button>
+    <ul class="food">
+
+    </ul>
+  </div>
+
+
+<script>
+
+const $title =document.querySelector('.title');
+const $menu = document.querySelector('.menu');
+
+$title.addEventListener('click',()=>{
+  $menu.classList.toggle('open');
+})
+
+const $btn=document.querySelector('.need-btn');
+const $needInput=document.querySelector('.need-food');
+const $ul=document.querySelector('.food');
+
+function needfood(){
+  if($needInput.value===''){
+    alert('목록을 작성해주세요!');
+    return;
+  }
+
+  const $li=document.createElement('li');
+  const $del= document.createElement('button');
+  $li.textContent=$needInput.value;
+
+  
+
+  $del.textContent='X';
+  $li.appendChild($del);
+
+  $ul.appendChild($li);
+  $needInput.value='';
+}
+
+$btn.addEventListener('click',needfood);
+
+  
+</script>
+
+
+
+</body>
+</html>

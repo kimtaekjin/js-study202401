@@ -1,0 +1,103 @@
+*{
+  box-sizing: border-box; 
+  /* padding을 줘도 박스의 사이즈가 변하지 않도록 설정 */
+}
+
+html{
+  font-family: 'Roboto',open-sans;
+}
+
+body{
+  margin: 0;
+}
+
+header{
+  background:#023d6d;
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+  /* em:자신의 폰트사이즈
+    rem:html의 폰트사이즈 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    width: 100%;
+}
+
+.card{
+  margin: 2rem auto;
+  width: 40rem;
+  max-width: 90%;
+  border: 2px solid #023d6d;
+  height: 8rem;
+}
+#input-number{
+  font: inherit;
+  font-size: 3rem;
+  border: 2px solid #023d6d;
+  width: 10rem;
+  display: block;
+  margin: auto;
+  padding:15px;
+  color: #023d6d;
+  text-align: center;
+  height: 20px;
+}
+
+#Calculator input:focus{
+  outline: none;
+}
+
+#Calculator button{
+  font: inherit;
+  background: #023d6d;
+  color: #fff;
+  border: 1px solid #023d6d;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+#Calculator button:focus{
+  outline: none;
+}
+
+#Calculator button:hover,
+#Calculator button:active{
+background: #023d6d;
+border: #023d6d;
+}
+
+#calc-actions button{
+  width: 4rem;
+}
+#calc-actions{
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#results{
+  text-align: center;
+}
+#logs{
+  min-height: 10rem;
+  max-height: 15rem;
+  padding: 2rem 5rem;
+  overflow: auto;
+}
+#log-entries{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: rgb(237, 78, 78);
+}
+
+#log-entries .log-entries-item{
+  width: 50%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px #ccc;
+  padding: 0.75rem;
+  margin-bottom: 0.6rem;
+}
