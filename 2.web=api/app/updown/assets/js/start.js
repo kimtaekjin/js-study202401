@@ -75,7 +75,7 @@ function checkNumber($target) {
 };
 
 
-let x = 3;
-const name = '홍길동';
+// let x = 3;
+// const name = '홍길동';
 
-export {x, name};
+// export {x, name};
